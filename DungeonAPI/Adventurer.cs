@@ -1,3 +1,4 @@
+
 public class Adventurer
 {
 	public required string Name { get; set; }

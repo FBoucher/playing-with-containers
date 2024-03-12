@@ -1,4 +1,5 @@
 using Bogus;
+using Bogus.DataSets;
 
 public class DataGenerator
 {
@@ -6,7 +7,7 @@ public class DataGenerator
 
 	public DataGenerator()
 	{
-		Randomizer.Seed = new Random(424242);
+		Randomizer.Seed = new Random(DateTime.Now.Millisecond);
 
 		fSeller = new Faker<Adventurer>()
 			.RuleFor(a => a.Name, f => f.Name.FullName())
