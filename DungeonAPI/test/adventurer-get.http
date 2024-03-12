@@ -1,0 +1,3 @@
+
+GET http://localhost:5173/adventurer
+Content-Type: Application-Json
