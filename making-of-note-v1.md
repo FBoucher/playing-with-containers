@@ -80,4 +80,4 @@ In this first iteration, we created a simple .NET Minimal API, containerized it 
 
 ## Next
 
-In the [next iteration](https://github.com/FBoucher/playing-with-containers?making-of-note-v2#2---.NET-Minimal-API-with-local-dependencies), we will add a local dependency to the project and see how it affects the containerization and deployment to Azure.
+In the [next iteration](https://github.com/FBoucher/playing-with-containers/blob/main/making-of-note-v2.md#2---net-minimal-api-with-local-dependencies), we will add a local dependency to the project and see how it affects the containerization and deployment to Azure.
