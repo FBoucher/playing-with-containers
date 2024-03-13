@@ -9,6 +9,7 @@ param applicationInsightsName string
 param exists bool
 @secure()
 param appDefinition object
+param imageIteration string
 
 var appSettingsArray = filter(array(appDefinition.settings), i => i.name != '')
 var secrets = map(filter(appSettingsArray, i => i.?secret != null), i => {
@@ -90,7 +91,7 @@ resource app 'Microsoft.App/containerApps@2023-04-01-preview' = {
     template: {
       containers: [
         {
-          image: fetchLatestImage.outputs.?containers[?0].?image ?? 'fboucher/dungeon-api:latest'
+          image: fetchLatestImage.outputs.?containers[?0].?image ?? imageIteration
           name: 'dungeon-api'
           env: union([
             {

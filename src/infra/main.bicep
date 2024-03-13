@@ -16,6 +16,12 @@ param dungeonAPIDefinition object
 @description('Id of the user or app to assign application roles')
 param principalId string
 
+@description('The iteration of the of the deployment')
+@allowed([
+  'dungeon-api:v1'
+  'dungeon-api:v2'])
+param imageIteration string
+
 // Tags that should be applied to all resources.
 // 
 // Note that 'azd-service-name' tags should be applied separately to service host resources.
@@ -101,6 +107,7 @@ module dungeonAPI './app/DungeonAPI.bicep' = {
     containerRegistryName: registry.outputs.name
     exists: dungeonAPIExists
     appDefinition: dungeonAPIDefinition
+    imageIteration: imageIteration
   }
   scope: rg
 }

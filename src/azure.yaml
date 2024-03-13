@@ -5,7 +5,7 @@ metadata:
     template: azd-init@1.6.1
 services:
     DungeonAPI:
-        project: .
+        project: DungeonAPI/.
         host: containerapp
         language: dotnet
         docker:

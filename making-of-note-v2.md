@@ -2,7 +2,7 @@
 
 ## Create the second iteration of DungeonAPI
 
-The DungeonAPI V2 was created by copying the V1 folder and moving the classes in a new project called `DungeonDomain`. The `DungeonAPI` project now has a reference to the `DungeonDomain` project. This should represent a more realistic scenario where the API has a dependency to a domain project. 
+The DungeonAPI V2 was created by copying the V1 folder and moving the classes in a new project called `DungeonDomain`. The `DungeonAPI` project now has a reference to the `DungeonDomain` project. This should represent a more realistic scenario where the API has a dependency to a domain project.
 
 A workaround to avoid having local dependencies would be to have those projects in NuGet packages.
 
@@ -19,3 +19,8 @@ cd DungeonAPI\
 dotnet add reference ..\DungeonDomain\DungeonDomain.csproj
 
 ```
+
+## Containerize the solution
+
+If we try to containerize the solution using the same Dockerfile as the V1, we will get an error because the Dockerfile is not aware of the `DungeonDomain` project. We need to make some changes so the `DungeonDomain` project is included.
+

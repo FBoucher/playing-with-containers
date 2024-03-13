@@ -36,11 +36,11 @@ When you're ready, start your application by running
 docker compose up --build
 ```
 
-Build your image ex: `docker build -t fboucher/dungeon-api .`
+Build your image ex: `docker build -t fboucher/dungeon-api:v1 .`
 
-Push it to your Docker/ Azure registry  ex `docker push fboucher/dungeon-api`.
+Push it to your Docker/ Azure registry  ex `docker push fboucher/dungeon-api:v1`.
 
-Then it can be run from everywhere, with ex  `docker run --rm -p 8080:8080 fboucher/dungeon-api`
+Then it can be run from everywhere, with ex  `docker run --rm -p 8080:8080 fboucher/dungeon-api:v1`
 
 ## Hosting in Azure Container App
 
