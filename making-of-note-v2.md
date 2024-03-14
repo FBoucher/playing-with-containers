@@ -24,3 +24,22 @@ dotnet add reference ..\DungeonDomain\DungeonDomain.csproj
 
 If we try to containerize the solution using the same Dockerfile as the V1, we will get an error because the Dockerfile is not aware of the `DungeonDomain` project. We need to make some changes so the `DungeonDomain` project is included.
 
+
+## Deploy to Azure
+
+There is already a Container Environment in deployed and this iteration is still a single container. By looking into the Azure portal the `resource-group`, and `environment` (Container Apps Environment) can be found and then a second container can be deployed using the following command: 
+
+```azcli
+az containerapp create -n ca-dungeonapi-v2 -g RESSOURCE_GROUP --image fboucher/dungeon-api:v2 --environment ENVIRONMENT_NAME --ingress external --target-port 8081  --min-replicas 0 --max-replicas 1
+```
+
+## Summary
+
+In this second iteration, we created a simple .NET Minimal API with a local dependency, containerized it and deployed it to Azure. Instead of using the CICD we used `az cli` command to add a second container to the existing environment.
+
+```azcli
+
+
+## Next
+
+In the [next iteration](#), let's add a database to the solution and see how it affects the containerization and deployment to Azure.
